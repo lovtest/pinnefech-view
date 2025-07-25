@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 import { 
   LayoutDashboard,
   UserPlus,
@@ -80,6 +81,8 @@ const biometricTypes = [
 
 export default function Sidebar({ className }: SidebarProps) {
   const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className={cn(
@@ -105,9 +108,11 @@ export default function Sidebar({ className }: SidebarProps) {
           <Button
             key={item.href}
             variant="ghost"
+            onClick={() => navigate(item.href)}
             className={cn(
               "w-full justify-start h-11 px-3 text-left font-normal",
               "hover:bg-accent/50 hover:text-accent-foreground",
+              location.pathname === item.href && "bg-accent text-accent-foreground",
               collapsed && "px-2"
             )}
           >

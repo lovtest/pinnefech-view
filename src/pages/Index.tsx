@@ -136,7 +136,12 @@ const Index = () => {
                     <span className="text-sm font-medium">187,892</span>
                   </div>
                 </div>
-                <Button variant="outline" size="sm" className="w-full">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={() => console.log('Navigate to regions view')}
+                >
                   View All Regions
                 </Button>
               </CardContent>
@@ -185,19 +190,34 @@ const Index = () => {
                 <CardTitle>Quick Actions</CardTitle>
               </CardHeader>
               <CardContent className="grid grid-cols-2 gap-4">
-                <Button className="h-20 flex flex-col gap-2">
+                <Button 
+                  className="h-20 flex flex-col gap-2"
+                  onClick={() => console.log('Navigate to enrollment')}
+                >
                   <Users className="w-6 h-6" />
                   New Enrollment
                 </Button>
-                <Button variant="outline" className="h-20 flex flex-col gap-2">
+                <Button 
+                  variant="outline" 
+                  className="h-20 flex flex-col gap-2"
+                  onClick={() => console.log('Navigate to verification')}
+                >
                   <UserCheck className="w-6 h-6" />
                   Verify Identity
                 </Button>
-                <Button variant="outline" className="h-20 flex flex-col gap-2">
+                <Button 
+                  variant="outline" 
+                  className="h-20 flex flex-col gap-2"
+                  onClick={() => console.log('Navigate to ID printing')}
+                >
                   <Printer className="w-6 h-6" />
                   Print ID Card
                 </Button>
-                <Button variant="outline" className="h-20 flex flex-col gap-2">
+                <Button 
+                  variant="outline" 
+                  className="h-20 flex flex-col gap-2"
+                  onClick={() => console.log('Navigate to security audit')}
+                >
                   <Shield className="w-6 h-6" />
                   Security Audit
                 </Button>
